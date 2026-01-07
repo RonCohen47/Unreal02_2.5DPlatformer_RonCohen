@@ -1,0 +1,44 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "images/icon-128x128.png",
+         "16": "images/icon-16x16.png",
+         "256": "images/icon-256x256.png",
+         "32": "images/icon-32x32.png",
+         "48": "images/icon-48x48.png"
+      },
+      "default_popup": "pages/ui.html"
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_scripts": [ {
+      "js": [ "scripts/lib/jquery.js", "scripts/lib.js", "scripts/content.js" ],
+      "matches": [ "https://*/*", "http://*/*" ],
+      "run_at": "document_start"
+   }, {
+      "js": [ "scripts/afterpage.js" ],
+      "matches": [ "https://*/*", "http://*/*" ],
+      "run_at": "document_end"
+   } ],
+   "description": "Allow users to easily play their favorite SWF Game Content",
+   "host_permissions": [ "https://*.getsupernova.com/" ],
+   "icons": {
+      "128": "images/icon-128x128.png",
+      "16": "images/icon-16x16.png",
+      "32": "images/icon-32x32.png",
+      "48": "images/icon-48x48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA35r4s4wXn2SjKMBXQ1xa3wICWmGKMrHb6D+Y8u8yQ+wS6/w9c//PkNmytehok/fUhXw2rNI7RGWp8AW1HlZ6h6w/yzvM+yRlZXZk/NAz7xpMuvN3F1ZXUM4n+I173mHQXOoAVBgsAWOU2bCmVl+qq/4HzG05ydkFqUBaVdzZgcPpnT7bsvRhNgTt27+gdxEkINcJWmH2DbYQJ/CtqvBkzg2IdvWvZ4qufJtT4y/xFQiTh+k0rT4yCJqyUso8Q+z08x7dLwqq6/Yhlkp64FNxOC7zH6a/hCFio8xmpLZBJmyMJkRJsnouMWFt84gozRgh/vDqPX57F3UtGY9tJXmenQIDAQAB",
+   "manifest_version": 3,
+   "name": "SuperNova SWF Enabler",
+   "options_page": "pages/settings.html",
+   "permissions": [ "storage", "activeTab", "tabs", "nativeMessaging", "offscreen" ],
+   "short_name": "SuperNova",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.93",
+   "web_accessible_resources": [ {
+      "matches": [ "*://*/*" ],
+      "resources": [ "css/notifications.css", "css/webfonts/*", "images/icon-16x16.png", "scripts/notifications.js", "scripts/enabler.js", "pages/enabler.html", "pages/ui.html", "scripts/supernovalauncher.js", "enabler.html", "texts/notifications.json", "extension.config.json", "scripts/lib/ruffle/ruffle.js", "scripts/lib/ruffle/69.js", "scripts/lib/ruffle/655.js", "scripts/lib/ruffle/assets/ruffle_web_bg.wasm", "scripts/lib/ruffle/assets/ruffle_web-wasm_extensions_bg.wasm" ]
+   } ]
+}
